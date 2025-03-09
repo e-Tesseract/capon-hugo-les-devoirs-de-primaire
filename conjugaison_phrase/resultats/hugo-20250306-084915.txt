@@ -1,0 +1,21 @@
+Nous organisons une tombola.
+ organisons
+Lulu et moi jouons dans la cour.
+ jouons
+********Tu va à la kermesse de l'école.
+ va;viens
+********Vous a midi à quatorze heures.
+ a;cherchez
+********Lulu et moi a dans la cour.
+ a;jouons
+********Nous  avec Lisa.
+ ;plaisantons
+********Lola, Arthur et moi  une bonne note à la dernière évaluation.
+ ;avons
+********On  décrocher la lune.
+ ;veut
+********Il  à la kermesse de l'école.
+ ;vient
+********Maman et papa  des raviolis.
+ ;mangent
+2

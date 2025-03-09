@@ -3,14 +3,26 @@
 // paramètre : nom du fichier de log
 function log_adresse_ip($cheminFichierLog, $nomPage) {
     $adresseIP = $_SERVER['REMOTE_ADDR'];
-    $fichierLog = fopen($cheminFichierLog, "a");
-    $tdate=getdate();
-    $jour=sprintf("%02.2d",$tdate["mday"])."/".sprintf("%02.2d",$tdate["mon"])."/".$tdate["year"];
-    $heure=sprintf("%02.2d",$tdate["hours"])."h".sprintf("%02.2d",$tdate["minutes"])."m".sprintf("%02.2d",$tdate["seconds"])."s";
-    $d="[".$jour." ".$heure."]";
-    fwrite($fichierLog,$d." - ".$adresseIP." : ".$nomPage."\n");
-    fclose($fichierLog);
+
+    // Récupérer l'ID de l'utilisateur s'il est connecté
+    $userID = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : "invité";
+
+    // Obtenir la date et l'heure au format YYYY-MM-DD HH:MM:SS
+    $dateHeure = date("Y-m-d H:i:s");
+
+    // Vérifier si le dossier du fichier log existe, sinon le créer
+    $dossierLog = dirname($cheminFichierLog);
+    if (!file_exists($dossierLog)) {
+        mkdir($dossierLog, 0777, true);
+    }
+
+    // Construire la ligne de log
+    $log = "[$dateHeure] - IP: $adresseIP - User: $userID - Page: $nomPage\n";
+
+    // Écrire dans le fichier log (ajout en fin de fichier)
+    file_put_contents($cheminFichierLog, $log, FILE_APPEND);
 }
+
 ?>
 
 <?php
