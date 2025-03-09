@@ -1,6 +1,4 @@
 <?php
-// log adresse ip
-// paramètre : nom du fichier de log
 function log_adresse_ip($cheminFichierLog, $nomPage) {
     $adresseIP = $_SERVER['REMOTE_ADDR'];
 
