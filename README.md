@@ -141,7 +141,6 @@ les-devoirs-de-primaire/
 ├── footer.php
 ├── header.php
 ├── index.php
-├── layout.php
 ├── LICENSE
 ├── login.php
 ├── logout.php
